@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec rake ci
+        env:
+          REGION: uscentral
+          SUBSCRIPTION_KEY: k3ah8ztrc4ojeh98r05zh7v6x9w62lqp
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: "./coverage/lcov.info"
+      - name: Rubocop
+        run: rubocop
