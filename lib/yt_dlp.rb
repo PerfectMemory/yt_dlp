@@ -2,7 +2,10 @@
 
 require 'yt_dlp/version'
 
+#
+# Top level module for YtDlp.
+#
 module YtDlp
-  class Error < StandardError; end
-  # Your code goes here...
 end
+
+require_relative 'yt_dlp/utils'
