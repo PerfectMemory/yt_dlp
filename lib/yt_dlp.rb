@@ -9,3 +9,4 @@ module YtDlp
 end
 
 require_relative 'yt_dlp/utils'
+require_relative 'yt_dlp/runner_options'
