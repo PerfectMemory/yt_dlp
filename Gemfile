@@ -8,10 +8,12 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 group :test do
+  gem 'debase', require: false
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
+  gem 'ruby-debug-ide', require: false
   gem 'simplecov', require: false
   gem 'simplecov-lcov', require: false
   gem 'solargraph', require: false
