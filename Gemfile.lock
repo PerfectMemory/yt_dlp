@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     yt_dlp (0.1.0)
-      dry-configurable (~> 0)
+      dry-configurable (~> 0.13)
       dry-struct (~> 1)
       terrapin (~> 0)
 

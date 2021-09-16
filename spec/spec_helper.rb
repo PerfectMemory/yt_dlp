@@ -2,6 +2,7 @@
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
+require 'dry/configurable/test_interface'
 require 'rspec/its'
 require 'simplecov'
 require 'simplecov-lcov'
@@ -26,6 +27,10 @@ SimpleCov.start do
 end
 
 require 'yt_dlp'
+
+module YtDlp
+  enable_test_interface
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
