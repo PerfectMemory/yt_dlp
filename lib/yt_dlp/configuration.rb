@@ -11,6 +11,6 @@ module YtDlp
   # Path to the yt-dlp executable
   setting :executable_path,
           constructor: ->(path) { Pathname(path) },
-          default: File.join('..', '..', 'vendor', 'bin', 'yt-dlp'),
+          default: File.join(__dir__, '..', '..', 'vendor', 'bin', 'yt-dlp'),
           reader: true
 end
