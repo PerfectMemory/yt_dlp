@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yt_dlp (0.1.0)
+    yt_dlp (0.1.1)
       terrapin (~> 0)
 
 GEM

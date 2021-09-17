@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+## [0.1.1] - 2021-09-17
+
 ### Fixed
 
 - Typo in gemspec
