@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(__dir__, '../lib'))
 
 require 'rspec/its'
 require 'simplecov'
 require 'simplecov-lcov'
 
+# Require all support files
+Dir.glob(File.join(__dir__, 'support', '*.rb')).sort.each do |f|
+  require f
+end
+
 SimpleCov::Formatter::LcovFormatter.config do |c|
   c.report_with_single_file = true
   c.single_report_path = 'coverage/lcov.info'
 end
+
 SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
   [
     SimpleCov::Formatter::HTMLFormatter,
@@ -39,4 +45,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
     mocks.verify_doubled_constant_names = true
   end
+
+  config.include Helpers
 end

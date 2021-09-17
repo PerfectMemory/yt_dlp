@@ -4,6 +4,6 @@ require 'spec_helper'
 
 describe YtDlp do
   it 'has a version number' do
-    expect(YtDlp::VERSION).not_to be nil
+    expect(described_class::VERSION).not_to be nil
   end
 end
