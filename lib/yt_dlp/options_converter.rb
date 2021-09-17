@@ -3,6 +3,12 @@
 module YtDlp
   #
   # Class responsible for converting a ruby Hash into valid yt-dlp options.
+  # Convert the option Hash into valid yt-dlp options.
+  # (key,value) pairs are transformed according to the following rules
+  # * { key: value } --> '--key value'
+  # * { my_key: value } --> '--my-key value'. Allow dev to keep using ruby naming conventions
+  # * { key: true } --> '--key'
+  # * { key: false } --> '--no-key'
   #
   class OptionsConverter
     attr_reader :options

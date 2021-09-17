@@ -3,7 +3,6 @@
 module YtDlp
   #
   # Wraps the execution of the yt-dlp command.
-  # Assumes
   #
   class Runner
     attr_reader :executable_path, :url, :options

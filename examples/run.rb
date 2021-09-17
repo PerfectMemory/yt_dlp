@@ -12,10 +12,8 @@ end
 
 url = 'https://www.youtube.com/watch?v=fzlT80jQ3lo'
 
-# allow directly output: 'test.mp4'
+# See https://github.com/yt-dlp/yt-dlp for the list of options
 video = YtDlp::Video.new url, output: 'test.mp4'
 
-# puts video.download
-video.information
-
+video.download
 #########
