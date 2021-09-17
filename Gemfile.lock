@@ -108,7 +108,7 @@ DEPENDENCIES
   debase
   rake (~> 13.0)
   rspec (~> 3.0)
-  rspec-its
+  rspec-its (~> 1.3)
   rubocop
   rubocop-performance
   rubocop-rake
