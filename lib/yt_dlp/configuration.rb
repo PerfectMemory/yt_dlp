@@ -1,16 +1,25 @@
 # frozen_string_literal: true
 
 module YtDlp
-  # Link to the documentation for those who are new to dry-configurable
-  # https://dry-rb.org/gems/dry-configurable/
-  extend Dry::Configurable
+  class Configuration
+    attr_writer :logger, :executable_path
 
-  # Info logger (useful to print the executed command)
-  setting :logger, default: Logger.new($stdout), reader: true
+    def logger
+      @logger ||= Logger.new($stdout)
+    end
 
-  # Path to the yt-dlp executable
-  setting :executable_path,
-          constructor: ->(path) { Pathname(path) },
-          default: File.join(__dir__, '..', '..', 'vendor', 'bin', 'yt-dlp'),
-          reader: true
+    def executable_path
+      @executable_path ||= File.join(__dir__, '../../vendor/bin/yt-dlp')
+    end
+  end
+
+  class << self
+    def configure
+      yield config
+    end
+
+    def config
+      @config ||= Configuration.new
+    end
+  end
 end

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(__dir__, '../lib'))
 
-require 'dry/configurable/test_interface'
 require 'rspec/its'
 require 'simplecov'
 require 'simplecov-lcov'
@@ -16,6 +15,7 @@ SimpleCov::Formatter::LcovFormatter.config do |c|
   c.report_with_single_file = true
   c.single_report_path = 'coverage/lcov.info'
 end
+
 SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
   [
     SimpleCov::Formatter::HTMLFormatter,
@@ -32,10 +32,6 @@ SimpleCov.start do
 end
 
 require 'yt_dlp'
-
-module YtDlp
-  enable_test_interface
-end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
