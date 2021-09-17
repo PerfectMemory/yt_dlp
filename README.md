@@ -1,5 +1,9 @@
 # yt_dlp
 
+[![CI](https://github.com/PerfectMemory/yt_dlp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/PerfectMemory/yt_dlp/actions/workflows/ci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e0a6aab8925641f3e0a3/maintainability)](https://codeclimate.com/github/PerfectMemory/yt_dlp/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/PerfectMemory/yt_dlp/badge.svg?branch=main)](https://coveralls.io/github/PerfectMemory/yt_dlp?branch=main)
+
 Wrapper for the [yt_dlp](https://github.com/yt-dlp/yt-dlp) tool.
 This gem is heavily inspired by the [youtube_dl.rb](https://github.com/layer8x/youtube-dl.rb) gem.
 
