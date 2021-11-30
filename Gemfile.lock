@@ -100,7 +100,9 @@ GEM
     thor (1.1.0)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
-    yard (0.9.26)
+    webrick (1.7.0)
+    yard (0.9.27)
+      webrick (~> 1.7.0)
 
 PLATFORMS
   ruby
